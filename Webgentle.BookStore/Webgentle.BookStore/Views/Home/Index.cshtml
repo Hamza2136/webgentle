@@ -1,28 +1,69 @@
 ﻿
 @{
-    Layout = null;
+    Layout = "_Layout";
 }
 
-<!DOCTYPE html>
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1>Welcome to Book Store</h1>
+        <p class="lead text-muted">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. 
+        </p>
+        <p>
+            <a href="#" class="btn btn-primary my-2">Search Books</a>
+        </p>
+    </div>
+</section>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-	<title>Index</title>
-	<link href="~/css/site.css" rel="stylesheet" />
-	<link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
-</head>
-<body class="container">
-	<img src="~/images/logo.jpg" class="logo" alt="logo" />
-    <h1 class="h1">Welcome the the Hamza's Book Store</h1>
-    <p>This is the homepage of the Book Store.</</p>
-	<input type="button" value="Click Me" class="btn btn-danger" />
-
-	<script src="~/lib/jquery/jquery.js"></script>
-	<script>
-		$(document).ready(function(){
-			alert("Page Loaded");
-		});
-	</script>
-</body>
-</html>
+<div class="py-5 bg-light">
+    <div class="container">
+        <h3>Top Books</h3>
+        <div class="row">
+            <div class=" col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" >
+                        <div class="card-body">
+                            <p class="card-text">This section will be used to display the short discription of the book</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">View Details</a>
+                                </div>
+                                <small class="text-muted">Author Name</small>
+                            </div>
+                        </div>
+                    </svg>                
+                </div>
+            </div>
+            <div class=" col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225">
+                        <div class="card-body">
+                            <p class="card-text">This section will be used to display the short discription of the book</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">View Details</a>
+                                </div>
+                                <small class="text-muted">Author Name</small>
+                            </div>
+                        </div>
+                    </svg>
+                </div>
+            </div>
+            <div class=" col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225">
+                        <div class="card-body">
+                            <p class="card-text">This section will be used to display the short discription of the book</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">View Details</a>
+                                </div>
+                                <small class="text-muted">Author Name</small>
+                            </div>
+                        </div>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
