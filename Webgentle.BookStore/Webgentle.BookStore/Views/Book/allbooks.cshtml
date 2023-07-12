@@ -1,7 +1,32 @@
-﻿
+﻿@model IEnumerable<Webgentle.BookStore.Models.BookModel>
 @{
     Layout = "_Layout";
 }
-    <h1>List of All Books</h1>
-    <p>Here is the list of all the books avaliable at our book store.</p>
-    <button>Click Me</button>
+
+<div class="container">
+    <div class="row">
+        <h3 class="display-4">All Books</h3>
+        @foreach (var book in Model)
+        {
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <svg class="card-img-top" width="100%" height="225">
+                        <!-- Replace this SVG with an appropriate image or remove the SVG placeholder -->
+                        <rect width="100%" height="100%" fill="#55595c" />
+                    </svg>
+                    <div class="card-body">
+                        <h3 class="card-title">@book.Title</h3>
+                        <p class="card-text">@book.description</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a href="/book/getbook/@book.id" class="btn btn-sm btn-outline-secondary">View Details</a>
+                            </div>
+                            <small class="text-muted">@book.Author</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

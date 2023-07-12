@@ -8,6 +8,7 @@
     <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
+
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
@@ -34,16 +35,27 @@
                             <a class="nav-link text-dark" href="/home/aboutus">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="home/contactus">Contact Us</a>
+                            <a class="nav-link text-dark" href="/home/ContactUS">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/book/allbooks">All Books</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
      </header>
+
     <main role="main">
         @RenderBody()
     </main>
-    <script src="~/lib/jquery/jquery.js"></script>
+
+    <footer class="border-top footer text-muted text-center">
+            Copyright &copy; Book Store @DateTime.Now.Year
+    </footer>
+
+	<script src="~/lib/jquery/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+    @RenderSection("scripts", required:false)
 </body>
 </html>

@@ -15,11 +15,12 @@ namespace Webgentle.BookStore.Controllers
         public ViewResult allbooks()
         {
             var data = bookRepository.AllBooks();
-            return View();
+            return View(data);
         }
-        public BookModel getbook(int id)
+        public ViewResult getbook(int id)
         {
-            return bookRepository.getbook(id);
+            var data = bookRepository.getbook(id);
+            return View(data);
         }
         public List<BookModel> searchbook(string title, string author)
         {

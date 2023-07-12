@@ -22,10 +22,12 @@ namespace Webgentle.BookStore.Repository
         {
             return new List<BookModel>()
             {
-                new BookModel() {id = 1, Title = "Java", Author = "Hamza"},
-                new  BookModel(){id = 2, Title = "Python", Author = "Ahmer"},
-                new BookModel() {id = 3, Title = "C#", Author = "Hassan"},
-                new BookModel() {id = 4, Title = "Dot Net Core", Author = "Ishaq"},
+                new BookModel() {id = 1, Title = "Java", Author = "Hamza", description="This is the description of Java Book",Category="Coding", Language="English",TotalPages=570},
+                new  BookModel(){id = 2, Title = "Python", Author = "Ahmer", description="This is the description of Python Book",Category="Coding", Language="English",TotalPages=570},
+                new BookModel() {id = 3, Title = "C#", Author = "Hassan", description="This is the description of C# Book",Category="Coding", Language="English",TotalPages=570},
+                new BookModel() {id = 4, Title = "Dot Net Core", Author = "Ishaq", description="This is the description of Dot net Core Book",Category="Coding", Language="English",TotalPages=570},
+                new BookModel() {id = 5, Title = "JavaScript", Author="Riaz", description="This is the description of JavaScript Book",Category="Coding", Language="English",TotalPages=570},
+                new BookModel() {id = 6, Title = "C++", Author="Ahmad", description="This is the description of C++ Book",Category="Coding", Language="English",TotalPages=570},
             };
         }
     }
