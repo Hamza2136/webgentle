@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Dynamic;
 using Webgentle.BookStore.Models;
 using Webgentle.BookStore.Repository;
 
@@ -15,6 +16,7 @@ namespace Webgentle.BookStore.Controllers
         public ViewResult allbooks()
         {
             var data = bookRepository.AllBooks();
+
             return View(data);
         }
         public ViewResult getbook(int id)
