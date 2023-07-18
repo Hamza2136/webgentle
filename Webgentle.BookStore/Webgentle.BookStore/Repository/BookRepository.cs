@@ -1,18 +1,85 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using System.Linq;
+using System.Net;
+using System.Threading.Tasks;
+using Webgentle.BookStore.Data;
 using Webgentle.BookStore.Models;
 
 namespace Webgentle.BookStore.Repository
 {
     public class BookRepository
     {
-        public List<BookModel> AllBooks()
+        private readonly BookStoreContext _context = null;
+        public BookRepository(BookStoreContext context)
         {
-            return DataSource();
+            _context = context;
         }
-        public BookModel getbook(int id)
+        public async Task<int> AddNewBook(BookModel model)
         {
-            return DataSource().Where(x=> x.id == id).FirstOrDefault();
+            var newbook = new Book()
+            {
+                Author = model.Author,
+                description = model.description,
+                CreatedOn = DateTime.Now,
+                UpdatedOn = DateTime.Now,
+                Title = model.Title,
+                TotalPages = model.TotalPages.HasValue? model.TotalPages.Value : 0,
+                Category = model.Category,
+                Language = model.Language
+            };
+            await _context.AddAsync(newbook);
+            await _context.SaveChangesAsync();
+            return newbook.id;
+
+        }
+        public async Task<List<BookModel>> AllBooks()
+        {
+            var Books = new List<BookModel>();
+            var allbooks = await _context.Books.ToListAsync();
+            if(allbooks?.Any() == true)
+            {
+                foreach (var book in allbooks)
+                {
+                    Books.Add(new BookModel()
+                    {
+                        Author = book.Author,
+                        Title = book.Title,
+                        Category = book.Category,
+                        description = book.description,
+                        CreatedOn = book.CreatedOn,
+                        UpdatedOn = book.UpdatedOn,
+                        TotalPages = book.TotalPages,
+                        Language = book.Language,
+                        id = book.id
+                    });
+                }
+            }
+
+            return Books;
+        }
+        public async Task<BookModel> getbook(int id)
+        {
+            var book = await _context.Books.FindAsync(id);
+            if(book != null)
+            {
+                var bookdetails = new BookModel()
+                {
+                    Author = book.Author,
+                    Title = book.Title,
+                    Category = book.Category,
+                    description = book.description,
+                    CreatedOn = book.CreatedOn,
+                    UpdatedOn = book.UpdatedOn,
+                    TotalPages = book.TotalPages,
+                    Language = book.Language,
+                    id = book.id
+                };
+                return bookdetails;
+            }
+            return null;
         }
         public List<BookModel> searchbook(string title, string author)
         {

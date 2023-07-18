@@ -53,7 +53,7 @@ body {
 }
 
 .footer {
-    position: relative;
+    position: absolute;
     bottom: 0;
     width: 100%;
     white-space: nowrap;
@@ -62,4 +62,12 @@ body {
 
 .membership-img {
     width: 80%;
+}
+
+#btn1{
+    margin-top : 10px;
+}
+
+#lan{
+    margin-bottom:6px;
 }
